@@ -26,7 +26,7 @@ class Room(object):
         player -= item
     def do(self, action, player):
         if action in DIRECTIONS:
-            player @= (getattr(player.current(), action, None) and DIRECTIONS.get(action)) or (0,0)
+            player <<= (getattr(player.current(), action, None) and DIRECTIONS.get(action)) or (0,0) # or @= in python3.6+
         elif action.startswith("look "):
             print(self.stuff.get(action.lstrip("look ")) or "???")
         elif action == "search":
