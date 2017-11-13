@@ -30,6 +30,9 @@ class Character(object):
     def __matmul__(self, right):
         self.pos = (self.pos[0] + right[0], self.pos[1] + right[1])
         return self
+    def __lshift__(self, right):
+        self.pos = (self.pos[0] + right[0], self.pos[1] + right[1])
+        return self
     def __contains__(self, key):
         if type(key) is int:
             return key <= self.coins
