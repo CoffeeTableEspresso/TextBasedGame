@@ -6,7 +6,7 @@ m = Map(10, 10, (2,1))
 heaven = Map(10, 10, (1, 5))
 hell = Map(10, 10, (3,2))
 
-start = (6,0) #(2,1)
+start = (2,1)
 player = Character([], 0, m, start) 
 
 heaven[1,5] = PortalShop("Heavenly Shop I", "A white, pure shop with items that never run out of stock.", {"holy water": ["water", 10]}, 0, {"light":m}, 0, 0, 0, 0) # water and 10 coins
@@ -138,5 +138,5 @@ if __name__ == "__main__":
     while True:
         print(player)
         print(player.current())
-        player.do(input(">>> ").strip()) 
+        player.do(raw_input(">>> ").strip()) 
 
